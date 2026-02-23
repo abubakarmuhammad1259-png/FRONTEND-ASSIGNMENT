@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PurpleSky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { 
+            --primary: #764ba2; 
+            --secondary: #667eea;
+            --glass: rgba(255, 255, 255, 0.12);
+            --white: #ffffff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.3s ease; }
+
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            color: var(--white);
+        }
+
+        /* Glassmorphism Navigation */
+        nav { 
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 20px 8%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo { 
+            font-weight: 700; 
+            font-size: 1.6rem; 
+            color: var(--white); 
+            letter-spacing: 1px;
+        }
+
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: rgba(255, 255, 255, 0.7); 
+            font-weight: 500; 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a:hover, .active-link { 
+            color: var(--white) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Layout Container */
+        .container { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 60px 20px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Glass Card */
+        .card { 
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 45px; 
+            border-radius: 30px; 
+            width: 100%;
+            max-width: 900px; /* Wider to accommodate two sections */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Responsive Grid */
+        @media (max-width: 768px) {
+            .card { grid-template-columns: 1fr; padding: 30px; }
+        }
+
+        .contact-info h2 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 700; }
+        .contact-info p { color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; line-height: 1.6; }
+
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .info-item i { 
+            width: 45px; height: 45px; 
+            background: rgba(255, 255, 255, 0.2); 
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Form Styling */
+        form h3 { margin-bottom: 20px; font-weight: 600; opacity: 0.9; }
+        
+        input, textarea { 
+            width: 100%; 
+            padding: 14px; 
+            margin: 10px 0; 
+            border-radius: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            outline: none;
+        }
+
+        input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.5); }
+
+        input:focus, textarea:focus { 
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #bb86fc; 
+            box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+        }
+
+        .btn { 
+            width: 100%; 
+            padding: 15px; 
+            background: #ffffff; 
+            color: var(--primary); 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-weight: 700; 
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover { 
+            background: #bb86fc; 
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        footer { 
+            padding: 25px; 
+            text-align: center; 
+            background: rgba(0,0,0,0.15);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">protocol</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="aboutus.html"><i class="fas fa-user"></i> About Us</a></li>
+            <li><a href="contactus.html" class="active-link"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="contact-info">
+                <h2>Let's Talk</h2>
+                <p>Have a question or just want to say hi? We'd love to hear from you. Drop us a message!</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+123 456 7890</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Purple Lane, Sky City</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>hello@purplesky.com</span>
+                </div>
+            </div>
+
+            <form action="#">
+                <h3>Send a Message</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 ABBA • DESIGNED WITH ELEGANCE</footer>
+
+</body>
+</html>
